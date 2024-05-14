@@ -1,0 +1,108 @@
+#navegation_bar{
+    background-color: #233470;
+    height: 10%;
+    font-family:'Poppins', 'sans-serif';
+    color: white;
+    font-size: 113%;
+    display: flex;
+    size: 10%;
+    margin-bottom:0;
+    padding:0;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-color: #C5C8D5;
+}
+
+#navegation_bar p{
+    margin-left:2%;
+}
+
+#employee_image{
+    height:75%;
+    margin-left: 20%;
+    transform: translateY(+10%);
+ 
+}
+
+#background{
+    
+    margin-top: -3%;
+    padding:0;
+    width: 40%;
+    height:70%;
+    background-color: #d7deff;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(+20%);
+}
+
+
+#title{
+    transform: translateY(+110%);
+    text-align: center;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #081647;
+}
+
+
+#principal{
+    padding:0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginEmployee{
+    height: 10%;
+    width: 5%; 
+    transform: translateY(+40%);
+
+}
+#loginForm{
+    height: auto;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins', 'sans-serif';
+    text-overflow: ellipsis;
+    text-align:center;
+    vertical-align: auto;
+    transform: translateY(+30%);
+}
+
+
+.input{
+    display:flex;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    font-family: 'Courier New', Courier, monospace;
+    vertical-align: auto;
+    height:7%;
+}
+
+#loginEmployeeButton{
+    font-family: 'Poppins', 'sans-serif';
+    background-color: #233470;
+    color:white;
+}
+
+
+#message{
+    display: flex;
+    color: #233470;
+    width: fit-content;
+    font-size: 85%;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
