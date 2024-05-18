@@ -1,0 +1,144 @@
+#navegation_bar{
+    background-color: #233470;
+    height: 9%;
+    font-family:'Poppins', 'sans-serif';
+    color: white;
+    font-size: 113%;
+    margin:0;
+    padding:0;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+#navegation_bar p{
+    margin-left:2%;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+#navegation_bar a p{
+    text-decoration: none;
+}
+
+#navegation_bar a{
+    text-decoration: none;
+   
+
+}
+
+#logo{
+    height:90%;
+    margin-left: -550%;
+    transform: translateY(+7%);
+}
+
+#home_link{
+    margin-left: -10%;
+}
+
+.link{
+    margin-left: 5%;
+    display: flex;
+    color: white;
+    white-space: nowrap;
+    justify-self: center;
+    text-align: center;
+    transform: translateY(-15%);
+} 
+
+body{
+    margin:0;
+    padding: 0;
+}
+
+#promotion_container{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 0.5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 35%;
+}
+
+#promotion{
+    margin-left: auto;
+    margin-right:auto;
+    justify-content: center;
+    height: 100%;
+}
+
+#background_table{
+    margin-left:auto;
+    margin-right:auto;
+    width: 75.5%;
+    height:65%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Cambia el espacio entre los elementos */
+    align-items: flex-start; /* Controla la alineación vertical */
+    margin-top: 2%;
+    margin-bottom: 20%;
+    
+}
+
+
+.product{
+    width: 30%; /* Ajusta el ancho de cada producto */
+    margin-bottom: 2%; /* Espacio entre los productos */
+    text-align: center;
+    font-family:'Poppins', 'sans-serif';
+    border: 1px solid #3f3e3e;
+    border-radius: 11px;
+   
+}
+
+.product a{
+    text-decoration: none;
+    color:black;
+}
+.product img{
+    height: 30%;
+    margin-top:2%;
+}
+
+.product p{
+    line-height: 1;
+    font-size: 95%;
+}
+
+
+.addProductButton{
+    font-family: 'Poppins', 'sans-serif';
+    margin-bottom:3%;
+    background-color: #a7b6ec;
+    border: darkgray;
+}
+
+.numberOfProducts{
+    width:20%;
+    margin-bottom:3%;
+}
+
+
+footer{
+    display:flex;
+    text-align:center;
+    justify-content:center;
+    font-family: 'Poppins', 'sans-serif';
+    background-color: #233470;
+    color: lightgray;
+    margin-top:10%;
+    padding: 0;
+    margin-right: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: lightgray;
+}

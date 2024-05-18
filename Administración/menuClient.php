@@ -1,8 +1,8 @@
 <?php 
- session_start();
- $nombreCliente = $_SESSION['nombreCliente'];
+    session_start();
+    $nombreCliente = $_SESSION['$nombreCliente'];
 ?>
-    <a class="link" id="home_link" href = "index.php">
+    <a class="link" id="home_link" href = "../Usuarios/index.php">
         <p> Home</p>
     </a> 
     <a class="link" href = "productos.php">

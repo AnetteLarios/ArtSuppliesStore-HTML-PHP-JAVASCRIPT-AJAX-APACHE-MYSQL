@@ -12,7 +12,7 @@ if(empty($nombre)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/addProductFormCss.css" type="text/css">
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <link rel = "icon" href="images/image.png">
+    <link rel = "icon" href="images/productos.png">
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script>
 

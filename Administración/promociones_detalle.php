@@ -25,7 +25,7 @@ $data = $resultado->fetchAll(PDO::FETCH_OBJ);
     <title>Detalle Promociones</title>
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <link rel = "stylesheet" href = "css/detailsPromotions.css" type="text/css">
-    <link rel = "icon" href= "images/group.png">
+    <link rel = "icon" href= "images/promocion.png">
     <!--<script src="js/jquery-3.3.1.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     </head>

@@ -2,7 +2,16 @@
 session_start();
 
 $nombre = $_SESSION['nombreUser'];
+/*
+$inactive_time = 300;
 
+$session_life = time() - $_SESSION['nombreUser'];
+if($session_life > $inactive_time){
+    session_destroy(); 
+    header('Location : index.php');
+}
+$_SESSION['timeout']=time();
+*/
 if(empty($nombre)){
     header("Location: index.php");
 }

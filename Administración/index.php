@@ -16,7 +16,7 @@ if(!empty($nombre)){
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <link rel="stylesheet" href="css/loginEmployeeFormCss.css" type="text/css">
-    <link rel="icon" href="images/image1.png">
+    <link rel="icon" href="../Usuarios/images/justbackground.png">
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script>
         function verifyUser() {
@@ -26,20 +26,22 @@ if(!empty($nombre)){
             $.ajax({
                 url: 'funciones/verify_user.php',
                 type: 'POST',
-                data: 'correo=' + correo + '&pass=' + pass,
-                dataType: 'json', // Especificamos que esperamos un objeto JSON como respuesta
+                data: { correo: correo, pass: pass },
+                dataType: 'json',
                 success: function(response) {
-                    if (response.success) {
-                        // Credenciales correctas, redireccionar
+                    if (response.type === "admin") {
+                        // Redirigir a la página de empleado
                         window.location.href = 'bienvenido.php';
+                    } else if (response.type === "cliente") {
+                        // Redirigir a la página de cliente
+                        window.location.href = '../Usuarios/index.php';
                     } else {
-                        // Credenciales incorrectas, mostrar mensaje de error
+                        // Mostrar mensaje de error
                         $('#message').show();
                         $('#message').html(response.message);
-                        $('#correo').val('');
-                        $('#pass').val('');
                         setTimeout(function() {
                             $('#message').html('');
+                            $('#message').hide();
                         }, 5000);
                     }
                 },
@@ -49,32 +51,18 @@ if(!empty($nombre)){
                     $('#message').html('Ha ocurrido un error al procesar la solicitud');
                 }
             });
-}
-
-        function validate() {
-            var correo = document.loginEmployeeForm.correo.value;
-            var pass = document.loginEmployeeForm.pass.value;
-
-            if (correo.length == 0 || pass.length == 0) {
-                $('#message').show();
-                $('#message').html('Faltan campos por llenar');
-                setTimeout(function() {
-                    $('#message').html('');
-                    $('#message').hide();
-                }, 5000);
-            } else {
-                verifyUser();
-            }
         }
     </script>
 </head>
 
 <body>
     <nav id="navegation_bar">
-        <a href="empleados_lista.php">
-            <img id="employee_image" src="images/image1.png" alt="Employee">
+        <a href="../Usuarios/index.php">
+            <img id="employee_image" src="../Usuarios/images/diseñart.png" alt="Employee">
+            <?php
+                include ('menuClient.php');
+            ?>
         </a>
-        <p>Panel de administrador</p>
     </nav>
     <div id="background">
         <div id="principal">
@@ -93,11 +81,13 @@ if(!empty($nombre)){
                     <input class="input" id="pass" name="pass" type="password" required>
                 </label>
                 <br>
-                <input id="loginEmployeeButton" type="button" onclick="validate(); return false;" value="Ingresar">
+                <input id="loginEmployeeButton" type="button" onclick="verifyUser();" value="Ingresar">
             </form>
+            <a  id="register" href="../Usuarios/clientes_alta.php">
+                <p>¿No tienes una cuenta? ¡Regístrate!</p>
+            </a>
             <div id="message"></div>
         </div>
     </div>
 </body>
-
 </html>
