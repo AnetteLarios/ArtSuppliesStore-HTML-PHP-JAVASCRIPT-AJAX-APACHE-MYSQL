@@ -8,7 +8,7 @@
     <a class="link" href = "productos.php">
         <p> Productos</p>
     </a>
-    <a class="link" href = "contacto.php">
+    <a class="link" href = "contacto_formulario.php">
         <p> Contacto</p>
     </a>
     <?php

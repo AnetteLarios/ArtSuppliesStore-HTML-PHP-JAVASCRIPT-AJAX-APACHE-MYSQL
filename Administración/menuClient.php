@@ -5,10 +5,10 @@
     <a class="link" id="home_link" href = "../Usuarios/index.php">
         <p> Home</p>
     </a> 
-    <a class="link" href = "productos.php">
+    <a class="link" href = "../Usuarios/productos.php">
         <p> Productos</p>
     </a>
-    <a class="link" href = "contacto.php">
+    <a class="link" href = "../Usuarios/contacto.php">
         <p> Contacto</p>
     </a>
     <?php
