@@ -1,7 +1,7 @@
 <a href= "https://lumen.com.mx">
     <p class="link_footer"> © Todos los derechos reservados |</p>
 </a>
-<a>
+<a href="terminos_condiciones.php">
     <p class="link_footer">  Términos y condiciones |</p>
 </a>
 <a>

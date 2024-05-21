@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 ?>
 <html lang="es">
 <head>
@@ -67,9 +68,34 @@
         <a href="index.php">
                 <img id="client_image" src="images/diseñart.png" alt="Client">
         </a>
-        <?php
-                include('menu.php');
-            ?>
+        <?php ?>
+    <a class="link" id="home_link" href = "index.php">
+        <p> Home</p>
+    </a> 
+    <a class="link" href = "productos.php">
+        <p> Productos</p>
+    </a>
+    <a class="link" href = "contacto_formulario.php">
+        <p> Contacto</p>
+    </a>
+    <?php
+        if(empty($correoCliente)){
+            echo "<a class='link'  href = '../Administración/index.php'>
+                     <p> Iniciar Sesión </p>
+                </a>";
+        }else{
+            echo "<a class='link'  href = 'carrito01.php'>
+                    <p> Carrito(<span id='cart_count'>0</span>)</p>
+                </a>";
+        } 
+    ?>
+    <?php 
+        if(!empty($correoCliente)){
+            echo "<a class='link' href = 'funciones/cerrar_sesion.php'>
+            <p> Cerrar Sesión</p>
+        </a>";
+        }
+    ?>
     </nav>
     <div id="background">
         <div id="back_button">

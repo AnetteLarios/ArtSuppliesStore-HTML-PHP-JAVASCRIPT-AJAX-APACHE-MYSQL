@@ -1,6 +1,7 @@
 <?php
+error_reporting(0);
 session_start();
-$nombre = $_SESSION['nombreUser'];
+$nombre = $_SESSION['soloNombreUser'];
 if(empty($nombre)){
     header("Location: index.php");
 }

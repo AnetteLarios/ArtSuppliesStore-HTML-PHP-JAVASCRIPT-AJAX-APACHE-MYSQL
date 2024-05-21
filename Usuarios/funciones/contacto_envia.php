@@ -1,38 +1,36 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
-require 'vendor/autoload.php';
-
-$mail = new PHPMailer(true);
-
 $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
 $apellidos = filter_var($_POST['apellidos'], FILTER_SANITIZE_STRING);
-$correo = filter_var($_POST['correo'], FILTER_SANITIZE_EMAIL);
 $comentario = filter_var($_POST['comentario'], FILTER_SANITIZE_STRING);
-$subject = "Comentario enviado por $correo en diseñart";
+$correo = filter_var($_POST['correo'], FILTER_SANITIZE_EMAIL);
 
-try {
-    // Configuración del servidor SMTP
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'codingrepositories@gmail.com';
-    $mail->Password = 'nful ngde ylcf jbcz';
-    $mail->Port = 465;
-    $mail->SMTPSecure = 'ssl';
-   
-    $mail->setFrom('codingrepositories@gmail.com');
-    $mail->addAddress($correo);
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body = $comentario;
-    $mail->send();
+if (!empty($nombre) && !empty($apellidos) && !empty($comentario) && !empty($correo)) {
+    $destino = 'codingrepositories@gmail.com';
+    $asunto = "¡$correo ha enviado un comentario mediante diseñart!";
+    $cuerpo = '
+    <html>
+        <head>
+            <title>Comentario en diseñart</title>
+        </head>
+        <body>
+            <h1>Email de: '.$nombre.' </h1>
+            <p>Usuario: '.$correo.'</p>
+            <p> '.$comentario.'</p>
+        </body>
+    </html>
+    ';
 
-    echo "Correo enviado correctamente";
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+    $headers .= "From: Diseñart <$correo>\r\n";
+    $headers .= "Return-path: $destino\r\n";
 
-    // Resto de la configuración del correo...
-} catch (Exception $e) {
-    echo "No se pudo enviar el mensaje. Error del Mailer: {$mail->ErrorInfo}";
+    if (mail($destino, $asunto, $cuerpo, $headers)) {
+        echo "Comentario enviado correctamente";
+    } else {
+        echo "Error al enviar el correo";
+    }
+} else {
+    echo "Error: Todos los campos son obligatorios";
 }
+?>

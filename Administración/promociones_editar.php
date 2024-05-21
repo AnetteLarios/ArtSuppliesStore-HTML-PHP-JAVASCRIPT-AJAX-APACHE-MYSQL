@@ -1,6 +1,7 @@
 <?php 
 session_start();
-$nombre = $_SESSION['nombreUser'];
+error_reporting(0);
+$nombre = $_SESSION['soloNombreUser'];
 if(empty($nombre)){
     header("Location: index.php");
 }
@@ -78,9 +79,30 @@ $promotionData = $resultado->fetchAll(PDO::FETCH_OBJ);
                 <img id="employee_image" src="images/image1.png" alt="Employee">
             </a>
             <p>Panel de administrador |</p>
-            <?php
-                include('menu.php');
-            ?>
+            <?php 
+?>
+    <a class="link" href = "bienvenido.php">
+        <p> Inicio</p>
+    </a> 
+    <a class="link" href = "empleados_lista.php">
+        <p> Empleados</p>
+    </a>
+    <a class="link" href = "productos_lista.php">
+        <p> Productos</p>
+    </a>
+    <a class="link"  href = "promociones_lista.php">
+        <p> Promociones</p>
+    </a>
+    <a class="link"  href = "bienvenido.php">
+        <p>Bienvenido <?php echo $nombre?></p>
+    </a>
+    <a class="link" href = "pedidos_lista.php">
+        <p> Pedidos</p>
+    </a>
+    <a class="link" href = "funciones/cerrar_sesion.php" style="width: 120px;">
+        <p>Cerrar sesión</p>
+    </a>
+
         </nav>
         <div id="background">
              <div id="back_button">
@@ -95,7 +117,7 @@ $promotionData = $resultado->fetchAll(PDO::FETCH_OBJ);
                 <form enctype="multipart/form-data" name="editPromotionForm" id="editPromotionForm" method="post" action="funciones/promociones_actualiza.php">
                     <label>
                         Nombre:
-                        <input class="input" name="nombre" id="nombre" type="text" required value="<?php echo $data->nombre;?>">
+                        <input class="input" name="nombre" id="nombre" onblur="checkName();" type="text" required value="<?php echo $data->nombre;?>">
                     </label>
 
                     <?php if(empty($data->archivo)){

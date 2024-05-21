@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(0);
 $nombre = $_SESSION['nombreUser'];
 /*
 $inactive_time = 300;

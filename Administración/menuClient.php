@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $nombreCliente = $_SESSION['$nombreCliente'];
+    $nombreCliente = $_SESSION['nombreCliente'];
 ?>
     <a class="link" id="home_link" href = "../Usuarios/index.php">
         <p> Home</p>

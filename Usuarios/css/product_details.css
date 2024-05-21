@@ -113,7 +113,7 @@ body{
     text-align: center;
     justify-content: center;
     color:#233470;
-    text-anchor: middle;
+    font-weight: 700;
 }
 
 .addProductButton{
@@ -137,6 +137,7 @@ body{
     text-anchor: 800%;
     margin-right:auto;
     margin-left:auto;
+    font-weight: 700;
 }
 
 .related_products{

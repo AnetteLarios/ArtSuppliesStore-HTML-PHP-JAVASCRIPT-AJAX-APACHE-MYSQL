@@ -1,11 +1,15 @@
 <?php
-
+error_reporting(0);
 session_start();
 
-$nombre = $_SESSION['nombreUser'];
+$nombre = $_SESSION['nombreCliente'];
+$nombreAdmin = $_SESSION['nombreUser'];
+if(!empty($nombreAdmin)){
+    header("Location: bienvenido.php");
+}
 
 if(!empty($nombre)){
-    header("Location: bienvenido.php");
+    header("Location: ../Usuarios/index.php");
 }
 
 ?>

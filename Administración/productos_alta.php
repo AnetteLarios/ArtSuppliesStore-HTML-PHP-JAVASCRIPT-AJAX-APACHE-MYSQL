@@ -1,6 +1,8 @@
 <?php
+
 session_start();
-$nombre = $_SESSION['nombreUser'];
+error_reporting(0);
+$nombre = $_SESSION['soloNombreUser'];
 if(empty($nombre)){
     header("Location: index.php");
 }
@@ -76,7 +78,29 @@ if(empty($nombre)){
         </a>
         <p>Panel de administrador |</p>
         <?php
-            include('menu.php');
+          ?>
+              <a class="link" href = "bienvenido.php">
+                  <p> Inicio</p>
+              </a> 
+              <a class="link" href = "empleados_lista.php">
+                  <p> Empleados</p>
+              </a>
+              <a class="link" href = "productos_lista.php">
+                  <p> Productos</p>
+              </a>
+              <a class="link"  href = "promociones_lista.php">
+                  <p> Promociones</p>
+              </a>
+              <a class="link"  href = "bienvenido.php">
+                  <p>Bienvenido <?php echo $nombre?></p>
+              </a>
+              <a class="link" href = "pedidos_lista.php">
+                  <p> Pedidos</p>
+              </a>
+              <a class="link" href = "funciones/cerrar_sesion.php" style="width: 120px;">
+                  <p>Cerrar sesión</p>
+              </a>
+          
         ?>
     </nav>
     <div id="background">
@@ -88,7 +112,7 @@ if(empty($nombre)){
             <h3 id="title">Añadir Producto</h3>
         </div>
         <div id="addForm">
-            <form enctype="multipart/form-data" name="addProductForm" id="addProductForm" method="post" action="funciones/empleados_salva.php">
+            <form enctype="multipart/form-data" name="addProductForm" id="addProductForm" method="post" action="funciones/productos_salva.php">
                 <label>
                     Nombre:
                     <input class="input" name="nombre" id="nombre" type="text" required>

@@ -42,6 +42,6 @@ $insert = $con->prepare("INSERT INTO empleados (nombre, apellidos, correo, pass,
     $resultado = $insert->execute([$nombre, $apellidos, $correo, $passEnc, $id_rol, $archivo_n, $archivo_f, $status]);
         
     if($resultado === TRUE){
-        header("Location: empleados_lista.php");
+        header("Location: ../empleados_lista.php");
     }else echo "No se puedo añadir el usuario, por favor intente de nuevo";
     
