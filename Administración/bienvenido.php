@@ -1,7 +1,8 @@
 <?php
 session_start();
 error_reporting(0);
-$nombre = $_SESSION['nombreUser'];
+$nombre = $_SESSION['soloNombreUser'];
+
 /*
 $inactive_time = 300;
 
@@ -31,9 +32,30 @@ if(empty($nombre)){
         <nav id="navegation_bar">
             <img id="employee_image" src="images/image1.png" alt = "employee">
             <p>Panel de administrador |</p>
-            <?php
-                include('menu.php');
-            ?>
+            <?php 
+?>
+    <a class="link" href = "bienvenido.php">
+        <p> Inicio</p>
+    </a> 
+    <a class="link" href = "empleados_lista.php">
+        <p> Empleados</p>
+    </a>
+    <a class="link" href = "productos_lista.php">
+        <p> Productos</p>
+    </a>
+    <a class="link"  href = "promociones_lista.php">
+        <p> Promociones</p>
+    </a>
+    <a class="link"  href = "bienvenido.php">
+        <p>Bienvenido <?php echo $nombre?></p>
+    </a>
+    <a class="link" href = "pedidos_lista.php">
+        <p> Pedidos</p>
+    </a>
+    <a class="link" href = "funciones/cerrar_sesion.php" style="width: 120px;">
+        <p>Cerrar sesión</p>
+    </a>
+
         </nav>
         <div id="background">
             <div id="principal">

@@ -3,6 +3,8 @@ session_start();
 require_once "conexionbd.php";
 $con = conecta();
 
+date_default_timezone_set('America/Mexico_City');
+
 if (!isset($_POST['producto_id'], $_POST['stock'], $_POST['costo'], $_POST['deseados'])) {
     echo "Error: Datos de producto no recibidos correctamente.";
     exit;

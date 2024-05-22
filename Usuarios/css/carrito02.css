@@ -191,15 +191,14 @@ body{
 }
 
 footer{
-    display:flex;
+    display: flex;
     text-align:center;
     justify-content:center;
     font-family: 'Poppins', 'sans-serif';
     background-color: #233470;
     color: lightgray;
     margin-top: 6%;
-    padding: 0;
-    margin-right: 0;
+    padding: 10px;
 }
 
 footer a{

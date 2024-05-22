@@ -145,7 +145,8 @@ $products = obtenerProductosCarrito($idCliente, $con);
                                 $('#background_table').hide(300);
                                     $('#botonfinalizar').hide();
                                     $('.back_button').hide();
-                                    $('#fin_imagen').html("<img src='images/gif.gif' alt='carrito' width='150px' height=auto style=' margin-top:10px;'>");
+                                    $('footer').hide();
+                                    $('#fin_imagen').html("<img src='images/gif.gif' alt='carrito' width='50%' height=auto style=' margin-top:10px;'>");
                                 setTimeout("window.location.href = 'index.php';", 5000);
                             } else {
                                 alert('Se ha producido un error');

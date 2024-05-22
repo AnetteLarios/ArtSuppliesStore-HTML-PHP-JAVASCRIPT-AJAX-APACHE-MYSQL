@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 
-$nombre = $_SESSION['nombreCliente'];
+$nombreCliente = $_SESSION['nombreCliente'];
 $nombreAdmin = $_SESSION['nombreUser'];
 if(!empty($nombreAdmin)){
     header("Location: bienvenido.php");
@@ -63,9 +63,38 @@ if(!empty($nombre)){
     <nav id="navegation_bar">
         <a href="../Usuarios/index.php">
             <img id="employee_image" src="../Usuarios/images/diseñart.png" alt="Employee">
-            <?php
-                include ('menuClient.php');
-            ?>
+            <?php ;
+?>
+    <a class="link" id="home_link" href = "../Usuarios/index.php">
+        <p> Home</p>
+    </a> 
+    <a class="link" href = "../Usuarios/productos.php">
+        <p> Productos</p>
+    </a>
+    <a class="link" href = "../Usuarios/contacto_formulario.php">
+        <p> Contacto</p>
+    </a>
+    <?php
+
+        if(empty($nombreCliente)){
+            echo "<a class='link'  href = '../Administración/index.php'>
+                     <p> Iniciar Sesión </p>
+                </a>";
+        }else{
+            echo "<a class='link'  href = 'carrito01.php'>
+                    <p> Carrito</p>
+                </a>";
+
+        } 
+    ?>
+    <?php 
+
+        if(!empty($nombreCliente)){
+            echo "<a class='link' href = 'funciones/cerrar_sesion.php'>
+            <p> Cerrar Sesión</p>
+        </a>";
+        }
+    ?>
         </a>
     </nav>
     <div id="background">
@@ -93,5 +122,8 @@ if(!empty($nombre)){
             <div id="message"></div>
         </div>
     </div>
+    <footer>
+    <?php include ('footer.php');?>
+    </footer>
 </body>
 </html>

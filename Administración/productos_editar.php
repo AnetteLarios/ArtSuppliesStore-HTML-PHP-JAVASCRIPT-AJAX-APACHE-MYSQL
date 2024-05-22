@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 session_start();
-$$nombre = $_SESSION['soloNombreUser'];
+$nombre = $_SESSION['soloNombreUser'];
 if(empty($nombre)){
     header("Location: index.php");
 }
@@ -83,8 +83,7 @@ $productData = $resultado->fetchAll(PDO::FETCH_OBJ);
                 <img id="employee_image" src="images/image1.png" alt="Employee">
             </a>
             <p>Panel de administrador |</p>
-            <?php 
-?>
+            <?php ?>
     <a class="link" href = "bienvenido.php">
         <p> Inicio</p>
     </a> 

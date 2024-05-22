@@ -4,7 +4,7 @@ require_once "funciones/conexionbd.php";
 error_reporting(0);
 $con = conecta();
 
-$getProducts = $con->query("SELECT * FROM productos ORDER BY RAND() LIMIT 29"); 
+$getProducts = $con->query("SELECT * FROM productos WHERE status = 1 AND eliminado = 0 ORDER BY RAND() LIMIT 29"); 
 $num_products = $getProducts->rowCount();
 $productos = $getProducts->fetchAll(PDO::FETCH_OBJ);
 
@@ -135,8 +135,8 @@ if (!empty($idCliente)) {
                 <p>$<?php echo $producto->costo?>.00</p>
                 <?php
                 if (!empty($correoCliente)) {
-                    echo "<input type='number' id='cantidad_$producto_id' class='numberOfProducts' value='1' min='1' max='$stock'>
-                          <input type='button' value='Añadir' class='addProductButton' onclick='agregarCarrito($producto_id, $stock, $costo);'>
+                    echo "<input type='button' value='Añadir' class='addProductButton' onclick='agregarCarrito($producto_id, $stock, $costo);'>
+                          <input type='number' id='cantidad_$producto_id' class='numberOfProducts' value='1' min='1' max='$stock'>
                           <div style='color:#233470;font-weight: bold;' id='mensaje_$producto_id'></div>";
                 }
                 ?>

@@ -1,5 +1,6 @@
 <?php
 require "funciones/conexionbd.php";
+error_reporting(0);
 $con = conecta();
 session_start();
 $correoCliente = $_SESSION['correoCliente'];

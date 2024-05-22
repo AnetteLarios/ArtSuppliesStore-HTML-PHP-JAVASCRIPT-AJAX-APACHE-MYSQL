@@ -78,23 +78,30 @@ $total = 0;
                 <div class="header_field">Nombre</div>
                 <div class="header_field">Cantidad</div>
                 <div class="header_field">Precio</div>
+                <div class="header_field">Subtotal</div>
             </div>
             <?php foreach ($data as $dataProduct) {
                 // Actualización del total
-                $total += $dataProduct->precio; ?>
+                $precio = $dataProduct->precio;
+                $cantidad = $dataProduct->cantidad;
+                $subtotal = $cantidad * $precio;
+                $total += $subtotal; ?>
+                
                 <div id="dataRow">
                     <div class="dataCell"><?php echo $dataProduct->id_producto ?></div>
                     <div class="dataCell"><?php echo $dataProduct->nombre ?></div>
                     <div class="dataCell"><?php echo $dataProduct->cantidad ?></div>
                     <div class="dataCell">$<?php echo $dataProduct->precio ?>.00</div>
+                    <div class="dataCell">$<?php echo $subtotal?>.00</div>
                 </div>
             <?php } ?>
             <!-- Fila de total -->
             <div id="dataRow">
                 <div class="dataCell"></div>
                 <div class="dataCell"></div>
-                <div class="dataCell">Total:</div>
-                <div class="dataCell">$<?php echo $total ?>.00</div>
+                <div class="dataCell"></div>
+                <div class="dataCell"><b>Total:</b></div>
+                <div class="dataCell"><b>$<?php echo $total ?>.00 </b></div>
             </div>
         </div>
     </div>

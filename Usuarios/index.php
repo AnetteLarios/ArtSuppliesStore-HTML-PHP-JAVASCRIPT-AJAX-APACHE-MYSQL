@@ -3,11 +3,11 @@ require_once "funciones/conexionbd.php";
 error_reporting(0);
 $con = conecta();
 
-$getProducts = $con->query("SELECT * FROM productos ORDER BY RAND() LIMIT 6"); 
+$getProducts = $con->query("SELECT * FROM productos WHERE status = 1 AND eliminado = 0 ORDER BY RAND() LIMIT 6"); 
 $num_products = $getProducts->rowCount();
 $productos = $getProducts->fetchAll(PDO::FETCH_OBJ);
 
-$getPromotion = $con->query("SELECT * FROM promociones ORDER BY RAND() LIMIT 1");
+$getPromotion = $con->query("SELECT * FROM promociones WHERE status = 1 AND eliminado = 0 ORDER BY RAND() LIMIT 1");
 $num_promotions = $getPromotion->rowCount();
 $promocion = $getPromotion->fetchAll(PDO::FETCH_OBJ);
 
